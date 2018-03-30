@@ -35,6 +35,20 @@ header h1 {
   float: left;
 }
 
+label{
+  margin: 0 10px 0 0;
+  font-size: 32px;
+  line-height: 1.3em;
+  display: none;
+  width: 30px;
+  float: right;
+  color: #e5e5e5;
+}
+
+#toggle{
+  display: none;
+}
+
 header nav {
   float: right;
 }
@@ -51,21 +65,21 @@ header nav h2 {
   text-indent: -10000px;
 }
 
-header nav li {
-  list-style-type: none;
-  float: left;
-  margin-left: 20px;
+.menu{
   margin-top: 10px;
+  text-align: center;
 }
 
-header nav li a {
+.menu a{
+  clear: both;
   text-decoration: none;
   color: #4e4e4e;
   text-transform: uppercase;
   font-weight: bold;
+  margin-left: 20px;
 }
 
-header nav li a.current {
+header nav a.current {
   color: #1abb9c;
 }
 
@@ -233,37 +247,24 @@ footer li.tw{
   header nav{
     float: none;
   }
-
-  header nav li{
+  
+  header{
+    width: 98%;
     margin: 0 auto;
-    width: 16.66%;
-    text-align: center;
-    font-size: 14px;
+    padding: 1%;
   }
 
   header h1.logo{
     float: none;
     margin: 0 auto;
-    padding-bottom: 10px;
+    
   }
 }
 
-@media screen and (max-width: 580px){
-    
-    #latest-work li{
-      width: 60%;
-      margin: 30px 20% !important;
-      float: none;
-    }
-
-    #latest-work h2 {
-      text-align: center;
-    }
-}
 
 /*mobiles*/
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 580px){
 
   #selling-points li{
     width: 80%;
@@ -272,10 +273,15 @@ footer li.tw{
   }
 
   #latest-work li{
-    width: 80%;
-    margin: 30px 10% !important;
-  }
-
+      width: 60%;
+      margin: 30px 20% !important;
+      float: none;
+    }
+  
+   #latest-work h2 {
+      text-align: center;
+    }
+  
   #quote{
     font-size: 16px;
     font-weight: bold;
@@ -285,60 +291,59 @@ footer li.tw{
     width: 100%;
     float: none;
     border-top: 2px solid #333;
+  }  
+   
+  label{
+    display: block;
+    cursor: pointer;
+    background-color: #555;
   }
   
-  header nav li{
-    float: none;
-    width: 100%;
-    margin: 0;
-  }
-
-  header nav{
-    background: #555;
-  }
-
-  header .wrapper{
+  header{
+    background-color: #555;
     padding: 0;
     width: 100%;
   }
-
-  header{
-    padding: 10px 0 0;
-  }
-
-  header nav li a{
-    display: block;
+  
+  .menu{
     text-align: center;
-    padding: 10px;
-    color: #999;
-    border-top: 1px solid #4f4f4f;
-  }
-
-  #burger-nav{
     width: 100%;
-    height: 50px;
-    background: url(images/burger.png) no-repeat 98% center;
-    cursor: pointer;
+    display: none;
   }
-
-  header nav ul{
-    height: 0;
-    overflow: hidden;
+  
+  header .wrapper{
+    width: 100%;
+    padding: 0;
+    background-color: #e5e5e5;
   }
-
-  header nav ul.open{
-    height: auto;
+  
+  nav{
+    background-color: #555;
   }
-
-}
-
-
-
-
-
-
-
-
+  .menu a{
+    display: block;
+    border-bottom: 1px solid #999;
+    margin: 10px;
+    padding-bottom: 10px;
+    color: #e5e5e5;
+    font-size: 16px;
+    background-color: #555;    
+  }
+  
+  .menu a:last-child{
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  
+  .current{
+    border-top: 1px solid #999;
+    padding-top: 10px;
+  }
+  
+  #toggle:checked + .menu{
+    display: block;
+  }
+  
 
 
 
